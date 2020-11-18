@@ -1,11 +1,9 @@
 ﻿using RoR2;
-using RoR2.Artifacts;
-using System.Collections.Generic;
 using TILER2;
 using UnityEngine;
 using static RoR2.Artifacts.BombArtifactManager;
 
-namespace Chen.Bombaholic
+namespace Chen.BombasticMod
 {
     public class Malice : Artifact_V2<Malice>
     {
@@ -37,14 +35,14 @@ namespace Chen.Bombaholic
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (IsActiveAndEnabled()) Run.instance.gameObject.AddComponent<MaliceManager>();
+            if (IsActiveAndEnabled()) Run.instance.gameObject.AddComponent<BombasticManager>();
         }
 
         private void CharacterBody_onBodyStartGlobal(CharacterBody obj)
         {
             if (!IsActiveAndEnabled() || obj.teamComponent.teamIndex != TeamIndex.Monster) return;
-            MaliceManager maliceManager = Run.instance.GetComponent<MaliceManager>();
-            if (!maliceManager) return;
+            BombasticManager manager = Run.instance.GetComponent<BombasticManager>();
+            if (!manager) return;
 
             Vector3 corePosition = obj.corePosition;
             float bombComputation = obj.bestFitRadius * extraBombPerRadius * cvSpiteBombCoefficient.value;
@@ -61,33 +59,7 @@ namespace Chen.Bombaholic
                     teamIndex = obj.teamComponent.teamIndex,
                     velocityY = Random.Range(5f, 25f)
                 };
-                maliceManager.bombRequestQueue.Enqueue(item);
-            }
-        }
-    }
-
-    public class MaliceManager : MonoBehaviour
-    {
-        private Malice maliceInst;
-
-        public readonly Queue<BombRequest> bombRequestQueue = new Queue<BombArtifactManager.BombRequest>();
-
-        private void Awake()
-        {
-            maliceInst = Malice.instance;
-        }
-
-        private void FixedUpdate()
-        {
-            if (maliceInst.IsActiveAndEnabled() && bombRequestQueue.Count > 0)
-            {
-                BombRequest bombRequest = bombRequestQueue.Dequeue();
-                Ray ray = new Ray(bombRequest.raycastOrigin + new Vector3(0f, maxBombStepUpDistance, 0f), Vector3.down);
-                float maxDistance = maxBombStepUpDistance + maxBombFallDistance;
-                if (Physics.Raycast(ray, out RaycastHit raycastHit, maxDistance, LayerIndex.world.mask, QueryTriggerInteraction.Ignore))
-                {
-                    SpawnBomb(bombRequest, raycastHit.point.y);
-                }
+                manager.bombRequestQueue.Enqueue(item);
             }
         }
     }

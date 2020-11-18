@@ -1,0 +1,11 @@
+{
+  "name": "ChensBombaholicMod",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod",
+  "description": "Add 2 new artifacts into the game, namely the Artifacts of Malice and Spleen.",
+  "dependencies": [
+    "bbepis-BepInExPack-5.3.1",
+    "tristanmcpherson-R2API-2.5.14",
+    "ThinkInvis-TILER2-3.0.4"
+  ]
+}
