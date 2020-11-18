@@ -23,7 +23,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.1";
+            "1.0.2";
 
         public const string ModName = "ChensBombasticMod";
         public const string ModGuid = "com.Chen.ChensBombasticMod";

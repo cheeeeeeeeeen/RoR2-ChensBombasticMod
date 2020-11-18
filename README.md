@@ -21,6 +21,10 @@ Give a tip through Ko-fi: https://ko-fi.com/cheeeeeeeeeen
 
 ## Changelog
 
+**1.0.2**
+- Quick bug fix regarding the Bombastic Manager component being added twice when both artifacts are enabled.
+- Change default percent chance value to 15% since 5% looks like it doesn't proc. Configurable.
+
 **1.0.1**
 - Rename the mod in manifest to the correct one. Whoops.
 
