@@ -10,7 +10,7 @@ namespace Chen.BombasticMod
         public override string displayName => "Artifact of Spleen";
 
         [AutoConfig("Percentage chance of enemies throwing bombs when attacked. 5 means 5% chance.", AutoConfigFlags.None, 0f, 100f)]
-        public float throwBombChance { get; private set; } = 5f;
+        public float throwBombChance { get; private set; } = 15f;
 
         protected override string GetNameString(string langid = null) => displayName;
 
@@ -38,7 +38,7 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (IsActiveAndEnabled()) Run.instance.gameObject.AddComponent<BombasticManager>();
+            if (IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
         }
 
         private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)

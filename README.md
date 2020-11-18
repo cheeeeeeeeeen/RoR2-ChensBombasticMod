@@ -10,7 +10,7 @@ Use **r2modman** mod manager to install this mod.
 
 ## New Artifacts
 - **Malice** : Enemies generate bombs *upon spawning*.
-- **Origin** : Enemies *have a chance* to generate bombs *upon being attacked*.
+- **Spleen** : Enemies *have a chance* to generate bombs *upon being attacked*.
 
 ## Contact
 - Issue Page: https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/issues

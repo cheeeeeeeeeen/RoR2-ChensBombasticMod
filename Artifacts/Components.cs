@@ -22,5 +22,15 @@ namespace Chen.BombasticMod
                 }
             }
         }
+
+        public static BombasticManager GetOrAddComponent(Run run)
+        {
+            return GetOrAddComponent(run.gameObject);
+        }
+
+        public static BombasticManager GetOrAddComponent(GameObject runObject)
+        {
+            return runObject.GetComponent<BombasticManager>() ?? runObject.AddComponent<BombasticManager>();
+        }
     }
 }
