@@ -21,6 +21,10 @@ Use **r2modman** mod manager to install this mod.
 
 ## Changelog
 
+**1.0.3**
+- Fix an issue on connected clients lagging hard.
+- Rollback version dependency of R2API to `2.5.14` as it was causing some weird issues.
+
 **1.0.2**
 - Quick bug fix regarding the Bombastic Manager component being added twice when both artifacts are enabled.
 - Change default percent chance value to 15% since 5% looks like it doesn't proc. Configurable.

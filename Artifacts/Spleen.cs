@@ -1,6 +1,7 @@
 ﻿using RoR2;
 using TILER2;
 using UnityEngine;
+using UnityEngine.Networking;
 using static RoR2.Artifacts.BombArtifactManager;
 
 namespace Chen.BombasticMod
@@ -38,14 +39,15 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
+            if (NetworkServer.active && IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
         }
 
         private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
         {
             orig(self, damageInfo);
+            if (!NetworkServer.active || !IsActiveAndEnabled()) return;
             CharacterBody body = self.gameObject.GetComponent<CharacterBody>();
-            if (!IsActiveAndEnabled() || body.teamComponent.teamIndex != TeamIndex.Monster) return;
+            if (body.teamComponent.teamIndex != TeamIndex.Monster) return;
             if (!Util.CheckRoll(throwBombChance, body.master)) return;
             BombasticManager manager = Run.instance.GetComponent<BombasticManager>();
             if (!manager) return;

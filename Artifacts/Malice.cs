@@ -1,6 +1,7 @@
 ﻿using RoR2;
 using TILER2;
 using UnityEngine;
+using UnityEngine.Networking;
 using static RoR2.Artifacts.BombArtifactManager;
 
 namespace Chen.BombasticMod
@@ -35,12 +36,12 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
+            if (NetworkServer.active && IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
         }
 
         private void CharacterBody_onBodyStartGlobal(CharacterBody obj)
         {
-            if (!IsActiveAndEnabled() || obj.teamComponent.teamIndex != TeamIndex.Monster) return;
+            if (!NetworkServer.active || !IsActiveAndEnabled() || obj.teamComponent.teamIndex != TeamIndex.Monster) return;
             BombasticManager manager = Run.instance.GetComponent<BombasticManager>();
             if (!manager) return;
 
