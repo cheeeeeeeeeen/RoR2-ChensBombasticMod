@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿#undef DEBUG
 
 using BepInEx;
 using BepInEx.Configuration;
@@ -23,7 +23,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.3";
+            "1.0.4";
 
         public const string ModName = "ChensBombasticMod";
         public const string ModGuid = "com.Chen.ChensBombasticMod";

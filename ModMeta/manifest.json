@@ -1,8 +1,8 @@
 {
   "name": "ChensBombasticMod",
-  "version_number": "1.0.3",
+  "version_number": "1.0.4",
   "website_url": "https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod",
-  "description": "Fix a bug where connected clients are lagging hard when the artifacts from this mod are enabled. Rollback dependency to the old version of R2API as well. This mod adds 2 new artifacts into the game, namely the Artifacts of Malice and Spleen.",
+  "description": "REMOVE DEBUG BUILD. Sorry. Fix a bug where connected clients are lagging hard when the artifacts from this mod are enabled. Rollback dependency to the old version of R2API as well. This mod adds 2 new artifacts into the game, namely the Artifacts of Malice and Spleen.",
   "dependencies": [
     "bbepis-BepInExPack-5.3.1",
     "tristanmcpherson-R2API-2.5.14",

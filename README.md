@@ -21,6 +21,9 @@ Use **r2modman** mod manager to install this mod.
 
 ## Changelog
 
+**1.0.4**
+- Remove debug build!
+
 **1.0.3**
 - Fix an issue on connected clients lagging hard.
 - Rollback version dependency of R2API to `2.5.14` as it was causing some weird issues.
