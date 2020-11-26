@@ -23,16 +23,25 @@ namespace Chen.BombasticMod
             }
         }
 
-        public static BombasticManager GetOrAddComponent(Run run)
+        public void QueueBomb(CharacterBody body)
         {
-            return GetOrAddComponent(run.gameObject);
-        }
-
-        public static BombasticManager GetOrAddComponent(GameObject runObject)
-        {
-            BombasticManager manager = runObject.GetComponent<BombasticManager>();
-            if (!manager) manager = runObject.AddComponent<BombasticManager>();
-            return manager;
+            Vector3 corePosition = body.corePosition;
+            float bombComputation = body.bestFitRadius * extraBombPerRadius * cvSpiteBombCoefficient.value;
+            int num = Mathf.Min(maxBombCount, Mathf.CeilToInt(bombComputation));
+            for (int i = 0; i < num; i++)
+            {
+                Vector3 b = Random.insideUnitSphere * (bombSpawnBaseRadius + body.bestFitRadius * bombSpawnRadiusCoefficient);
+                BombRequest item = new BombRequest
+                {
+                    spawnPosition = corePosition,
+                    raycastOrigin = corePosition + b,
+                    bombBaseDamage = body.damage * bombDamageCoefficient,
+                    attacker = body.gameObject,
+                    teamIndex = body.teamComponent.teamIndex,
+                    velocityY = Random.Range(5f, 25f)
+                };
+                bombRequestQueue.Enqueue(item);
+            }
         }
     }
 }

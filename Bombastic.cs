@@ -1,12 +1,16 @@
-﻿#undef DEBUG
+﻿#define DEBUG
 
 using BepInEx;
 using BepInEx.Configuration;
+using Chen.Helpers;
+using Chen.Helpers.GeneralHelpers;
+using Chen.Helpers.LogHelpers;
 using R2API;
 using R2API.Utils;
 using System.Reflection;
 using TILER2;
 using UnityEngine;
+using static Chen.Helpers.GeneralHelpers.AssetsManager;
 using static TILER2.MiscUtil;
 using Path = System.IO.Path;
 
@@ -15,6 +19,7 @@ namespace Chen.BombasticMod
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
     [BepInDependency(TILER2Plugin.ModGuid, TILER2Plugin.ModVer)]
+    [BepInDependency(HelperPlugin.ModGuid, HelperPlugin.ModVer)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [R2APISubmoduleDependency(nameof(ResourcesAPI))]
     public class BombasticPlugin : BaseUnityPlugin
@@ -23,7 +28,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.4";
+            "1.0.5";
 
         public const string ModName = "ChensBombasticMod";
         public const string ModGuid = "com.Chen.ChensBombasticMod";
@@ -32,24 +37,19 @@ namespace Chen.BombasticMod
 
         internal static FilingDictionary<CatalogBoilerplate> chensItemList = new FilingDictionary<CatalogBoilerplate>();
 
-        internal static BepInEx.Logging.ManualLogSource _logger;
+        internal static Log Log;
 
         private void Awake()
         {
-            _logger = Logger;
+            Log = new Log(Logger);
             
 #if DEBUG
-            Log.Warning("Running test build with debug enabled! Report to CHEN if you're seeing this!");
-            On.RoR2.Networking.GameNetworkManager.OnClientConnect += (self, user, t) => { };
+            MultiplayerTest.Enable(Logger, "Running test build with debug enabled! Report to CHEN if you're seeing this!");
 #endif
 
             Log.Debug("Loading assets...");
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ChensBombasticMod.chensbombasticmod_assets"))
-            {
-                var bundle = AssetBundle.LoadFromStream(stream);
-                var provider = new AssetBundleResourcesProvider("@ChensBombasticMod", bundle);
-                ResourcesAPI.AddProvider(provider);
-            }
+            BundleInfo bundleInfo = new BundleInfo("@ChensBombasticMod", "ChensBombasticMod.chensbombasticmod_assets", BundleType.UnityAssetBundle);
+            new AssetsManager(bundleInfo).RegisterAll();
 
             cfgFile = new ConfigFile(Path.Combine(Paths.ConfigPath, ModGuid + ".cfg"), true);
 
@@ -70,20 +70,5 @@ namespace Chen.BombasticMod
         {
             CatalogBoilerplate.ConsoleDump(Logger, chensItemList);
         }
-    }
-
-    public static class Log
-    {
-        public static void Debug(object data) => logger.LogDebug(data);
-
-        public static void Error(object data) => logger.LogError(data);
-
-        public static void Info(object data) => logger.LogInfo(data);
-
-        public static void Message(object data) => logger.LogMessage(data);
-
-        public static void Warning(object data) => logger.LogWarning(data);
-
-        public static BepInEx.Logging.ManualLogSource logger => BombasticPlugin._logger;
     }
 }

@@ -1,8 +1,8 @@
-﻿using RoR2;
+﻿using Chen.Helpers.UnityHelpers;
+using RoR2;
 using TILER2;
-using UnityEngine;
 using UnityEngine.Networking;
-using static RoR2.Artifacts.BombArtifactManager;
+
 
 namespace Chen.BombasticMod
 {
@@ -36,7 +36,7 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (NetworkServer.active && IsActiveAndEnabled()) BombasticManager.GetOrAddComponent(Run.instance);
+            if (NetworkServer.active && IsActiveAndEnabled()) obj.gameObject.GetOrAddComponent<BombasticManager>();
         }
 
         private void CharacterBody_onBodyStartGlobal(CharacterBody obj)
@@ -45,23 +45,7 @@ namespace Chen.BombasticMod
             BombasticManager manager = Run.instance.GetComponent<BombasticManager>();
             if (!manager) return;
 
-            Vector3 corePosition = obj.corePosition;
-            float bombComputation = obj.bestFitRadius * extraBombPerRadius * cvSpiteBombCoefficient.value;
-            int num = Mathf.Min(maxBombCount, Mathf.CeilToInt(bombComputation));
-            for (int i = 0; i < num; i++)
-            {
-                Vector3 b = Random.insideUnitSphere * (bombSpawnBaseRadius + obj.bestFitRadius * bombSpawnRadiusCoefficient);
-                BombRequest item = new BombRequest
-                {
-                    spawnPosition = corePosition,
-                    raycastOrigin = corePosition + b,
-                    bombBaseDamage = obj.damage * bombDamageCoefficient,
-                    attacker = obj.gameObject,
-                    teamIndex = obj.teamComponent.teamIndex,
-                    velocityY = Random.Range(5f, 25f)
-                };
-                manager.bombRequestQueue.Enqueue(item);
-            }
+            manager.QueueBomb(obj);
         }
     }
 }

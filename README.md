@@ -21,6 +21,10 @@ Use **r2modman** mod manager to install this mod.
 
 ## Changelog
 
+**1.0.5**
+- Integrate ChensHelpers.
+- There shouldn't be any notable changes in game play.
+
 **1.0.4**
 - Remove debug build!
 
