@@ -7,9 +7,7 @@ using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
 using R2API;
 using R2API.Utils;
-using System.Reflection;
 using TILER2;
-using UnityEngine;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
 using static TILER2.MiscUtil;
 using Path = System.IO.Path;
@@ -42,7 +40,7 @@ namespace Chen.BombasticMod
         private void Awake()
         {
             Log = new Log(Logger);
-            
+
 #if DEBUG
             MultiplayerTest.Enable(Logger, "Running test build with debug enabled! Report to CHEN if you're seeing this!");
 #endif

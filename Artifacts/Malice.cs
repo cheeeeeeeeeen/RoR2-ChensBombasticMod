@@ -3,7 +3,6 @@ using RoR2;
 using TILER2;
 using UnityEngine.Networking;
 
-
 namespace Chen.BombasticMod
 {
     public class Malice : Artifact_V2<Malice>
