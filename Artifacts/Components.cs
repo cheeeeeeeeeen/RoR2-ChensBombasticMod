@@ -30,7 +30,9 @@ namespace Chen.BombasticMod
 
         public static BombasticManager GetOrAddComponent(GameObject runObject)
         {
-            return runObject.GetComponent<BombasticManager>() ?? runObject.AddComponent<BombasticManager>();
+            BombasticManager manager = runObject.GetComponent<BombasticManager>();
+            if (!manager) manager = runObject.AddComponent<BombasticManager>();
+            return manager;
         }
     }
 }
