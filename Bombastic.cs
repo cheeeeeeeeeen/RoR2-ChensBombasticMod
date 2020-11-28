@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿#undef DEBUG
 
 using BepInEx;
 using BepInEx.Configuration;
@@ -20,13 +20,13 @@ namespace Chen.BombasticMod
     [BepInDependency(HelperPlugin.ModGuid, HelperPlugin.ModVer)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [R2APISubmoduleDependency(nameof(ResourcesAPI))]
-    public class BombasticPlugin : BaseUnityPlugin
+    sealed class BombasticPlugin : BaseUnityPlugin
     {
         public const string ModVer =
 #if DEBUG
             "0." +
 #endif
-            "1.0.5";
+            "1.0.6";
 
         public const string ModName = "ChensBombasticMod";
         public const string ModGuid = "com.Chen.ChensBombasticMod";

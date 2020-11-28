@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 namespace Chen.BombasticMod
 {
-    public class Malice : Artifact_V2<Malice>
+    internal class Malice : Artifact_V2<Malice>
     {
         public override string displayName => "Artifact of Malice";
 

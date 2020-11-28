@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 namespace Chen.BombasticMod
 {
-    public class Spleen : Artifact_V2<Spleen>
+    internal class Spleen : Artifact_V2<Spleen>
     {
         public override string displayName => "Artifact of Spleen";
 

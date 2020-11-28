@@ -5,7 +5,7 @@ using static RoR2.Artifacts.BombArtifactManager;
 
 namespace Chen.BombasticMod
 {
-    public class BombasticManager : MonoBehaviour
+    internal class BombasticManager : MonoBehaviour
     {
         public readonly Queue<BombRequest> bombRequestQueue = new Queue<BombRequest>();
 
