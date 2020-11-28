@@ -14,21 +14,34 @@ using Path = System.IO.Path;
 
 namespace Chen.BombasticMod
 {
+    /// <summary>
+    /// Unity plugin of the mod.
+    /// </summary>
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
     [BepInDependency(TILER2Plugin.ModGuid, TILER2Plugin.ModVer)]
     [BepInDependency(HelperPlugin.ModGuid, HelperPlugin.ModVer)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [R2APISubmoduleDependency(nameof(ResourcesAPI))]
-    sealed class BombasticPlugin : BaseUnityPlugin
+    public class BombasticPlugin : BaseUnityPlugin
     {
+        /// <summary>
+        /// This mod's version.
+        /// </summary>
         public const string ModVer =
 #if DEBUG
             "0." +
 #endif
             "1.0.6";
 
+        /// <summary>
+        /// This mod's name.
+        /// </summary>
         public const string ModName = "ChensBombasticMod";
+
+        /// <summary>
+        /// This mod's GUID.
+        /// </summary>
         public const string ModGuid = "com.Chen.ChensBombasticMod";
 
         private static ConfigFile cfgFile;
