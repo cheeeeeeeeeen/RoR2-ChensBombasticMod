@@ -2,7 +2,7 @@
   "name": "ChensBombasticMod",
   "version_number": "1.0.6",
   "website_url": "https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod",
-  "description": "Integrate ChensHelpers. This mod adds 2 new artifacts into the game, namely the Artifacts of Malice and Spleen.",
+  "description": "Integrate ChensHelpers again so that it can use the latest version. This mod adds 2 new artifacts into the game, namely the Artifacts of Malice and Spleen.",
   "dependencies": [
     "bbepis-BepInExPack-5.3.1",
     "tristanmcpherson-R2API-2.5.14",
