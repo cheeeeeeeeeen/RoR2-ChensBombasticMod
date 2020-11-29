@@ -35,7 +35,7 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (NetworkServer.active && IsActiveAndEnabled()) obj.gameObject.GetOrAddComponent<BombasticManager>();
+            if (NetworkServer.active && IsActiveAndEnabled()) obj.GetOrAddComponent<BombasticManager>();
         }
 
         private void CharacterBody_onBodyStartGlobal(CharacterBody obj)

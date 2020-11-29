@@ -38,7 +38,7 @@ namespace Chen.BombasticMod
 
         private void Run_onRunStartGlobal(Run obj)
         {
-            if (NetworkServer.active && IsActiveAndEnabled()) obj.gameObject.GetOrAddComponent<BombasticManager>();
+            if (NetworkServer.active && IsActiveAndEnabled()) obj.GetOrAddComponent<BombasticManager>();
         }
 
         private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
