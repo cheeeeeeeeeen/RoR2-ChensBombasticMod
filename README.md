@@ -6,7 +6,9 @@ Adds 2 Artifacts into the game which are related to the Artifact of Spite.
 
 ## Installation
 
-Use **r2modman** mod manager to install this mod.
+Use **[r2modman](https://thunderstore.io/package/ebkr/r2modman/)** mod manager to install this mod.
+
+If one does not want to use a mod manager, then get the DLL from **[Thunderstore](https://thunderstore.io/package/Chen/ChensBombasticMod/)**.
 
 ## New Artifacts
 - **Malice** : Enemies generate bombs *upon spawning*.
