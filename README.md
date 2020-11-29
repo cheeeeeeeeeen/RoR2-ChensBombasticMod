@@ -21,6 +21,10 @@ Use **r2modman** mod manager to install this mod.
 
 ## Changelog
 
+**1.0.7**
+- Update the mod to improve some implementations from ChensHelper.
+- Needed update as they were breaking changes.
+
 **1.0.6**
 - Update dependency to breaking changes with ChensHelpers.
 - Update access modifiers of classes.
