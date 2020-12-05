@@ -5,7 +5,6 @@ using BepInEx.Configuration;
 using Chen.Helpers;
 using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
-using R2API;
 using R2API.Utils;
 using TILER2;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
@@ -22,7 +21,6 @@ namespace Chen.BombasticMod
     [BepInDependency(TILER2Plugin.ModGuid, TILER2Plugin.ModVer)]
     [BepInDependency(HelperPlugin.ModGuid, HelperPlugin.ModVer)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
-    [R2APISubmoduleDependency(nameof(ResourcesAPI))]
     public class BombasticPlugin : BaseUnityPlugin
     {
         /// <summary>
@@ -32,7 +30,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.7";
+            "1.0.8";
 
         /// <summary>
         /// This mod's name.

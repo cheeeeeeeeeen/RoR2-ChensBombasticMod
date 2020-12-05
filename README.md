@@ -23,6 +23,9 @@ If one does not want to use a mod manager, then get the DLL from **[Thunderstore
 
 ## Changelog
 
+**1.0.8**
+- Code cleanup and update the dependency as there were improvements from ChensHelpers.
+
 **1.0.7**
 - Update the mod to improve some implementations from ChensHelper.
 - Needed update as they were breaking changes.
