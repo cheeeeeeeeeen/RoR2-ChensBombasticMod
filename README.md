@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Support Chen](https://img.shields.io/badge/Support-Chen-ff69b4)](https://ko-fi.com/cheeeeeeeeeen)
 
-[![GitHub issues](https://img.shields.io/github/issues-raw/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/issues)
+[![GitHub issues](https://img.shields.io/github/issues/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/pulls)
 ![Maintenance Status](https://img.shields.io/badge/Maintainance-Active-brightgreen)
 
