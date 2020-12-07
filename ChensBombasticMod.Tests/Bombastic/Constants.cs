@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ChensBombasticMod.Tests.Bombastic
+namespace Chen.BombasticMod.Tests.Bombastic
 {
     [TestClass]
     public class Constants
@@ -8,7 +8,7 @@ namespace ChensBombasticMod.Tests.Bombastic
         [TestMethod]
         public void ModVer_Length_ReturnsCorrectFormat()
         {
-            string result = Chen.BombasticMod.BombasticPlugin.ModVer;
+            string result = BombasticPlugin.ModVer;
             const int ModVersionCount = 3;
 
             int count = result.Split('.').Length;
@@ -19,7 +19,7 @@ namespace ChensBombasticMod.Tests.Bombastic
         [TestMethod]
         public void ModName_Value_ReturnsCorrectName()
         {
-            string result = Chen.BombasticMod.BombasticPlugin.ModName;
+            string result = BombasticPlugin.ModName;
             const string ModName = "ChensBombasticMod";
 
             Assert.AreEqual(ModName, result);
@@ -28,7 +28,7 @@ namespace ChensBombasticMod.Tests.Bombastic
         [TestMethod]
         public void ModGuid_Value_ReturnsCorrectGuid()
         {
-            string result = Chen.BombasticMod.BombasticPlugin.ModGuid;
+            string result = BombasticPlugin.ModGuid;
             const string ModGuid = "com.Chen.ChensBombasticMod";
 
             Assert.AreEqual(ModGuid, result);
