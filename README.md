@@ -11,6 +11,7 @@
 
 ## Description
 
+kek
 Adds 2 Artifacts into the game which are related to the Artifact of Spite.
 
 ## Installation
