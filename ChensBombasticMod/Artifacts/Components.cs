@@ -1,26 +1,25 @@
-﻿using RoR2;
-using System.Collections.Generic;
+﻿using Chen.Helpers.UnityHelpers;
+using RoR2;
 using UnityEngine;
 using static RoR2.Artifacts.BombArtifactManager;
 
 namespace Chen.BombasticMod
 {
-    internal class BombasticManager : MonoBehaviour
+    internal class BombasticManager : QueueProcessor<BombRequest>
     {
-        public readonly Queue<BombRequest> bombRequestQueue = new Queue<BombRequest>();
+        protected override int itemsPerFrame { get; set; } = 1;
 
-        private void FixedUpdate()
+        protected override float processInterval { get; set; } = 0;
+
+        protected override bool Process(BombRequest bombRequest)
         {
-            if (bombRequestQueue.Count > 0)
+            Ray ray = new Ray(bombRequest.raycastOrigin + new Vector3(0f, maxBombStepUpDistance, 0f), Vector3.down);
+            float maxDistance = maxBombStepUpDistance + maxBombFallDistance;
+            if (Physics.Raycast(ray, out RaycastHit raycastHit, maxDistance, LayerIndex.world.mask, QueryTriggerInteraction.Ignore))
             {
-                BombRequest bombRequest = bombRequestQueue.Dequeue();
-                Ray ray = new Ray(bombRequest.raycastOrigin + new Vector3(0f, maxBombStepUpDistance, 0f), Vector3.down);
-                float maxDistance = maxBombStepUpDistance + maxBombFallDistance;
-                if (Physics.Raycast(ray, out RaycastHit raycastHit, maxDistance, LayerIndex.world.mask, QueryTriggerInteraction.Ignore))
-                {
-                    SpawnBomb(bombRequest, raycastHit.point.y);
-                }
+                SpawnBomb(bombRequest, raycastHit.point.y);
             }
+            return true;
         }
 
         public void QueueBomb(CharacterBody body)
@@ -40,7 +39,7 @@ namespace Chen.BombasticMod
                     teamIndex = body.teamComponent.teamIndex,
                     velocityY = Random.Range(5f, 25f)
                 };
-                bombRequestQueue.Enqueue(item);
+                Add(item);
             }
         }
     }
