@@ -30,7 +30,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.8";
+            "1.0.9";
 
         /// <summary>
         /// This mod's name.
