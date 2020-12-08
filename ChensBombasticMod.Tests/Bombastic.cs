@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Chen.BombasticMod.Tests.Bombastic
+namespace Chen.BombasticMod.Tests
 {
     [TestClass]
-    public class Constants
+    public class Bombastic
     {
         [TestMethod]
         public void ModVer_Length_ReturnsCorrectFormat()
@@ -32,6 +32,14 @@ namespace Chen.BombasticMod.Tests.Bombastic
             const string ModGuid = "com.Chen.ChensBombasticMod";
 
             Assert.AreEqual(ModGuid, result);
+        }
+
+        [TestMethod]
+        public void DebugCheck_Toggled_ReturnsFalse()
+        {
+            bool result = BombasticPlugin.DebugCheck();
+
+            Assert.IsFalse(result);
         }
     }
 }

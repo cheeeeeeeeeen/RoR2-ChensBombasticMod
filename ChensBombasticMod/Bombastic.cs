@@ -6,10 +6,13 @@ using Chen.Helpers;
 using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
 using R2API.Utils;
+using System.Runtime.CompilerServices;
 using TILER2;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
 using static TILER2.MiscUtil;
 using Path = System.IO.Path;
+
+[assembly: InternalsVisibleTo("ChensBombasticMod.Tests")]
 
 namespace Chen.BombasticMod
 {
@@ -78,6 +81,15 @@ namespace Chen.BombasticMod
         private void Start()
         {
             CatalogBoilerplate.ConsoleDump(Logger, chensItemList);
+        }
+
+        internal static bool DebugCheck()
+        {
+#if DEBUG
+            return true;
+#else
+            return false;
+#endif
         }
     }
 }

@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>..\ChensBombasticMod\lib\BepInEx.dll</HintPath>
+    </Reference>
     <Reference Include="ChensBombasticMod">
       <HintPath>..\ChensBombasticMod\Build\ChensBombasticMod.dll</HintPath>
     </Reference>
@@ -52,9 +55,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\ChensBombasticMod\lib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\ChensBombasticMod\lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bombastic\Constants.cs" />
+    <Compile Include="Bombastic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
