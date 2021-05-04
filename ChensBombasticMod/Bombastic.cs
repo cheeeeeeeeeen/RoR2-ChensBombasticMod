@@ -8,6 +8,7 @@ using Chen.Helpers.LogHelpers;
 using R2API.Utils;
 using System.Runtime.CompilerServices;
 using TILER2;
+using UnityEngine;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
 using static TILER2.MiscUtil;
 using Path = System.IO.Path;
@@ -33,7 +34,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "1.0.9";
+            "2.0.0";
 
         /// <summary>
         /// This mod's name.
@@ -51,6 +52,8 @@ namespace Chen.BombasticMod
 
         internal static Log Log;
 
+        internal static AssetBundle assetBundle;
+
         private void Awake()
         {
             Log = new Log(Logger);
@@ -61,7 +64,7 @@ namespace Chen.BombasticMod
 
             Log.Debug("Loading assets...");
             BundleInfo bundleInfo = new BundleInfo("@ChensBombasticMod", "ChensBombasticMod.chensbombasticmod_assets", BundleType.UnityAssetBundle);
-            new AssetsManager(bundleInfo).RegisterAll();
+            assetBundle = new AssetsManager(bundleInfo).Register() as AssetBundle;
 
             cfgFile = new ConfigFile(Path.Combine(Paths.ConfigPath, ModGuid + ".cfg"), true);
 

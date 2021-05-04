@@ -1,11 +1,13 @@
 ﻿using Chen.Helpers.UnityHelpers;
 using RoR2;
 using TILER2;
+using UnityEngine;
 using UnityEngine.Networking;
+using static Chen.BombasticMod.BombasticPlugin;
 
 namespace Chen.BombasticMod
 {
-    internal class Spleen : Artifact_V2<Spleen>
+    internal class Spleen : Artifact<Spleen>
     {
         public override string displayName => "Artifact of Spleen";
 
@@ -18,8 +20,8 @@ namespace Chen.BombasticMod
 
         public Spleen()
         {
-            iconResourcePath = "@ChensBombasticMod:Assets/Bombastic/texSpleenOn.png";
-            iconResourcePathDisabled = "@ChensBombasticMod:Assets/Bombastic/texSpleenOff.png";
+            iconResource = assetBundle.LoadAsset<Sprite>("Assets/Bombastic/texSpleenOn.png");
+            iconResourceDisabled = assetBundle.LoadAsset<Sprite>("Assets/Bombastic/texSpleenOff.png");
         }
 
         public override void Install()

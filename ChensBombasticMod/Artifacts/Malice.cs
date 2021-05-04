@@ -1,11 +1,13 @@
 ﻿using Chen.Helpers.UnityHelpers;
 using RoR2;
 using TILER2;
+using UnityEngine;
 using UnityEngine.Networking;
+using static Chen.BombasticMod.BombasticPlugin;
 
 namespace Chen.BombasticMod
 {
-    internal class Malice : Artifact_V2<Malice>
+    internal class Malice : Artifact<Malice>
     {
         public override string displayName => "Artifact of Malice";
 
@@ -15,8 +17,8 @@ namespace Chen.BombasticMod
 
         public Malice()
         {
-            iconResourcePath = "@ChensBombasticMod:Assets/Bombastic/texMaliceOn.png";
-            iconResourcePathDisabled = "@ChensBombasticMod:Assets/Bombastic/texMaliceOff.png";
+            iconResource = assetBundle.LoadAsset<Sprite>("Assets/Bombastic/texMaliceOn.png");
+            iconResourceDisabled = assetBundle.LoadAsset<Sprite>("Assets/Bombastic/texMaliceOff.png");
         }
 
         public override void Install()
