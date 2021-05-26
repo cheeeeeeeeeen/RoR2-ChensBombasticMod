@@ -21,7 +21,7 @@ namespace Chen.BombasticMod
 
         [AutoConfig("The processing interval of the bomb generation queue in seconds. For example, if 2 is specified, a bomb will be generated per two seconds. " +
                     "No need to modify unless too much bombs cause lag. In return, higher interval means that the queue may have more requests than it can process, which can cause a crash.",
-                    AutoConfigFlags.None, 0, 10f)]
+                    AutoConfigFlags.None, 0f, 10f)]
         public float spleenQueueProcessingInterval { get; private set; } = 0f;
 
         protected override string GetNameString(string langid = null) => displayName;

@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/Version-2.0.1-orange)
+![Version](https://img.shields.io/badge/Version-2.0.2-orange)
 ![Build](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/workflows/Build/badge.svg)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Support Chen](https://img.shields.io/badge/Support-Chen-ff69b4)](https://ko-fi.com/cheeeeeeeeeen)
@@ -31,6 +31,9 @@ If one does not want to use a mod manager, then get the DLL from **[Thunderstore
 - Give a tip through Ko-fi: https://ko-fi.com/cheeeeeeeeeen
 
 ## Changelog
+
+**2.0.2**
+- Fix a silly bug.
 
 **2.0.1**
 - Add a config option for to have a limit of the maximum bombs there can be in the queue.
