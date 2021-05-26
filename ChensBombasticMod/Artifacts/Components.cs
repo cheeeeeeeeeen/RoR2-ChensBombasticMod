@@ -52,7 +52,7 @@ namespace Chen.BombasticMod
 
         public override void QueueBomb(CharacterBody body)
         {
-            if (processQueue.Count >= limit) return;
+            if (limit > 0 && processQueue.Count >= limit) return;
             base.QueueBomb(body);
         }
     }
