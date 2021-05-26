@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/Version-2.0.0-orange)
+![Version](https://img.shields.io/badge/Version-2.0.1-orange)
 ![Build](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/workflows/Build/badge.svg)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Support Chen](https://img.shields.io/badge/Support-Chen-ff69b4)](https://ko-fi.com/cheeeeeeeeeen)
@@ -31,6 +31,10 @@ If one does not want to use a mod manager, then get the DLL from **[Thunderstore
 - Give a tip through Ko-fi: https://ko-fi.com/cheeeeeeeeeen
 
 ## Changelog
+
+**2.0.1**
+- Add a config option for to have a limit of the maximum bombs there can be in the queue.
+- The config option does not equate to limiting the total number of bombs in the playing field, since the issue being addressed here is the queue generating more than it can process.
 
 **2.0.0**
 - Update the mod so that it works again after the anniversary update.
