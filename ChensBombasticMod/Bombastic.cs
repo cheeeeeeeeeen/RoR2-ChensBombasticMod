@@ -63,7 +63,7 @@ namespace Chen.BombasticMod
 #endif
 
             Log.Debug("Loading assets...");
-            BundleInfo bundleInfo = new BundleInfo("@ChensBombasticMod", "ChensBombasticMod.chensbombasticmod_assets", BundleType.UnityAssetBundle);
+            BundleInfo bundleInfo = new BundleInfo("ChensBombasticMod.chensbombasticmod_assets", BundleType.UnityAssetBundle);
             assetBundle = new AssetsManager(bundleInfo).Register() as AssetBundle;
 
             cfgFile = new ConfigFile(Path.Combine(Paths.ConfigPath, ModGuid + ".cfg"), true);

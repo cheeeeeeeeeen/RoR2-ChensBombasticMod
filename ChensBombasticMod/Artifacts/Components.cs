@@ -22,7 +22,7 @@ namespace Chen.BombasticMod
             return true;
         }
 
-        public void QueueBomb(CharacterBody body)
+        public virtual void QueueBomb(CharacterBody body)
         {
             Vector3 corePosition = body.corePosition;
             float bombComputation = body.bestFitRadius * extraBombPerRadius * cvSpiteBombCoefficient.value;
@@ -41,6 +41,19 @@ namespace Chen.BombasticMod
                 };
                 Add(item);
             }
+        }
+    }
+
+    internal class SpleenManager : BombasticManager
+    {
+        private int limit { get; set; } = Spleen.instance.spleenQueueLimit;
+
+        protected override float processInterval { get; set; } = Spleen.instance.spleenQueueProcessingInterval;
+
+        public override void QueueBomb(CharacterBody body)
+        {
+            if (processQueue.Count >= limit) return;
+            base.QueueBomb(body);
         }
     }
 }
