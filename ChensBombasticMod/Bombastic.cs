@@ -34,7 +34,7 @@ namespace Chen.BombasticMod
 #if DEBUG
             "0." +
 #endif
-            "2.0.3";
+            "2.0.4";
 
         /// <summary>
         /// This mod's name.
