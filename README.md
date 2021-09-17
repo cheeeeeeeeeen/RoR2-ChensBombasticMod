@@ -5,7 +5,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/pulls)
-![Maintenance Status](https://img.shields.io/badge/Maintainance-Active-brightgreen)
+![Maintenance Status](https://img.shields.io/badge/Maintenance-Inactive-orange)
 
 # Chen's Bombastic Mod
 
