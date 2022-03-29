@@ -1,10 +1,7 @@
-![Version](https://img.shields.io/badge/Version-2.0.5-orange)
-![Build](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/workflows/Build/badge.svg)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Support Chen](https://img.shields.io/badge/Support-Chen-ff69b4)](https://ko-fi.com/cheeeeeeeeeen)
-
+![Version](https://img.shields.io/badge/Version-2.0.6-orange)
 [![GitHub issues](https://img.shields.io/github/issues/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cheeeeeeeeeen/RoR2-ChensBombasticMod)](https://github.com/cheeeeeeeeeen/RoR2-ChensBombasticMod/pulls)
+[![Support Chen](https://img.shields.io/badge/Support-Chen-ff69b4)](https://ko-fi.com/cheeeeeeeeeen)
 ![Maintenance Status](https://img.shields.io/badge/Maintenance-Inactive-orange)
 
 # Chen's Bombastic Mod
@@ -31,6 +28,10 @@ If one does not want to use a mod manager, then get the DLL from **[Thunderstore
 - Give a tip through Ko-fi: https://ko-fi.com/cheeeeeeeeeen
 
 ## Changelog
+
+**2.0.6**
+- Update libraries and switch to nuget packages.
+- Remove tests so that complexity for new maintainers is low.
 
 **2.0.5**
 - Update the mod so that it works after the breaking changes of Chen's Helpers.
